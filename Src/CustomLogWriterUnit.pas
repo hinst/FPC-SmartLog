@@ -1,4 +1,4 @@
-unit CustomLoggerUnit;
+unit CustomLogWriterUnit;
 
 interface
 
@@ -7,9 +7,8 @@ uses
   LogMessageUnit;
 
 type
-  TCustomLogger = class(TSmartObject)
+  TCustomLogWriter = class(TSmartObject)
   public
-    function Emit: TLogMessage; virtual; abstract;
     procedure Write(const aMessage: TLogMessage); virtual; abstract;
   end;
 

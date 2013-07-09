@@ -7,7 +7,8 @@ unit HinstFPCSmartLog;
 interface
 
 uses
-  LogMessageUnit, LogManagerUnit, LoggerUnit;
+  LogMessageUnit, LogManagerUnit, CustomLoggerUnit, LoggerUnit, 
+  CustomLogWriterUnit, CustomLogWriterHashSetUnit;
 
 implementation
 
