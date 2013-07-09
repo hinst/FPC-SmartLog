@@ -17,11 +17,19 @@
         <CompilerPath Value="$(CompPath)"/>
       </Other>
     </CompilerOptions>
-    <Files Count="1">
+    <Files Count="3">
       <Item1>
         <Filename Value="Src\LogMessageUnit.pas"/>
         <UnitName Value="LogMessageUnit"/>
       </Item1>
+      <Item2>
+        <Filename Value="Src\LogManagerUnit.pas"/>
+        <UnitName Value="LogManagerUnit"/>
+      </Item2>
+      <Item3>
+        <Filename Value="Src\CustomLoggerUnit.pas"/>
+        <UnitName Value="CustomLoggerUnit"/>
+      </Item3>
     </Files>
     <RequiredPkgs Count="2">
       <Item1>

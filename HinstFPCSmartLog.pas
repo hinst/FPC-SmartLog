@@ -7,7 +7,7 @@ unit HinstFPCSmartLog;
 interface
 
 uses
-  LogMessageUnit;
+  LogMessageUnit, LogManagerUnit, LoggerUnit;
 
 implementation
 
