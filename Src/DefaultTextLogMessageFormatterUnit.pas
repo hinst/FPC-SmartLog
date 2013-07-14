@@ -50,8 +50,7 @@ begin
     + '[' + aMessage.Tags.ToString(' ') + '] '
     + aMessage.Names.ToString('.')
     + '"' + aMessage.Name + '": '
-    + aMessage.Text
-    + LineEnding;
+    + aMessage.Text;
 end;
 
 end.

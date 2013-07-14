@@ -9,7 +9,8 @@ interface
 uses
   LogMessageUnit, LogManagerUnit, CustomLoggerUnit, LoggerUnit, 
   CustomLogWriterUnit, CustomLogWriterHashSetUnit, TextLogWriterUnit, 
-  TextLogMessageFormatterUnit, DefaultTextLogMessageFormatterUnit;
+  TextLogMessageFormatterUnit, DefaultTextLogMessageFormatterUnit, 
+  DefaultOutputLogWriterUnit, RootLoggerUnit, LogAssertionUnit;
 
 implementation
 

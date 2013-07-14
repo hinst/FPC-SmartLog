@@ -21,6 +21,7 @@ type
   public
     property Formatter: TTextLogMessageFormatter read FFormatter write SetFormatter;
     constructor Create; override;
+    constructor Create(const aFormatter: TTextLogMessageFormatter);
     procedure Write(const aMessage: TLogMessage); override;
     destructor Destroy; override;
   end;
@@ -39,6 +40,13 @@ end;
 constructor TTextLogWriter.Create;
 begin
   inherited Create;
+end;
+
+constructor TTextLogWriter.Create(const aFormatter: TTextLogMessageFormatter);
+begin
+  Create;
+  aFormatter.Acquire;
+  FFormatter := aFormatter;
 end;
 
 procedure TTextLogWriter.Write(const aMessage: TLogMessage);
