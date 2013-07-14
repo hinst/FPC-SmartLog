@@ -20,10 +20,12 @@ type
     FCounter: Cardinal;
     FWriters: TCustomLogWriterHashSet;
     property Writers: TCustomLogWriterHashSet read FWriters;
+    procedure ReleaseWriters;
   public
     property Counter: Cardinal read FCounter;
     constructor Create; override;
     procedure Add(const aWriter: TCustomLogWriter);
+    procedure Remove(const aWriter: TCustomLogWriter);
     function Emit: TLogMessage;
     procedure Write(const aMessage: TLogMessage);
     destructor Destroy; override;
@@ -32,6 +34,21 @@ type
 implementation
 
 { TLogManager }
+
+procedure TLogManager.ReleaseWriters;
+var
+  i: TCustomLogWriterHashSet.TIterator;
+begin
+  if
+    not Writers.IsEmpty
+  then
+  begin
+    i := Writers.Iterator;
+    repeat
+      i.Data.Release;
+    until not i.Next;
+  end;
+end;
 
 constructor TLogManager.Create;
 begin
@@ -42,7 +59,19 @@ end;
 
 procedure TLogManager.Add(const aWriter: TCustomLogWriter);
 begin
+  aWriter.Acquire;
   Writers.insert(aWriter);
+end;
+
+procedure TLogManager.Remove(const aWriter: TCustomLogWriter);
+begin
+  if
+    Writers.contains(aWriter)
+  then
+  begin
+    Writers.delete(aWriter);
+    aWriter.Release;
+  end;
 end;
 
 function TLogManager.Emit: TLogMessage;

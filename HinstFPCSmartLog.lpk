@@ -17,7 +17,7 @@
         <CompilerPath Value="$(CompPath)"/>
       </Other>
     </CompilerOptions>
-    <Files Count="6">
+    <Files Count="9">
       <Item1>
         <Filename Value="Src\LogMessageUnit.pas"/>
         <UnitName Value="LogMessageUnit"/>
@@ -42,6 +42,18 @@
         <Filename Value="Src\CustomLogWriterHashSetUnit.pas"/>
         <UnitName Value="CustomLogWriterHashSetUnit"/>
       </Item6>
+      <Item7>
+        <Filename Value="Src\TextLogWriterUnit.pas"/>
+        <UnitName Value="TextLogWriterUnit"/>
+      </Item7>
+      <Item8>
+        <Filename Value="Src\TextLogMessageFormatterUnit.pas"/>
+        <UnitName Value="TextLogMessageFormatterUnit"/>
+      </Item8>
+      <Item9>
+        <Filename Value="Src\DefaultTextLogMessageFormatterUnit.pas"/>
+        <UnitName Value="DefaultTextLogMessageFormatterUnit"/>
+      </Item9>
     </Files>
     <RequiredPkgs Count="3">
       <Item1>

@@ -8,7 +8,8 @@ interface
 
 uses
   LogMessageUnit, LogManagerUnit, CustomLoggerUnit, LoggerUnit, 
-  CustomLogWriterUnit, CustomLogWriterHashSetUnit;
+  CustomLogWriterUnit, CustomLogWriterHashSetUnit, TextLogWriterUnit, 
+  TextLogMessageFormatterUnit, DefaultTextLogMessageFormatterUnit;
 
 implementation
 
