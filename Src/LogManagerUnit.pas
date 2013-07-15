@@ -47,6 +47,7 @@ begin
     repeat
       i.Data.Release;
     until not i.Next;
+    i.Free;
   end;
 end;
 
@@ -77,6 +78,7 @@ end;
 function TLogManager.Emit: TLogMessage;
 begin
   result := TLogMessage.Create;
+  result.Acquire;
   result.Moment := Now;
   Inc(FCounter);
   result.Number := FCounter;
@@ -94,11 +96,14 @@ begin
       w := i.Data;
       w.Write(aMessage);
     until not i.Next;
+    i.Free;
   end;
+  aMessage.Release;
 end;
 
 destructor TLogManager.Destroy;
 begin
+  ReleaseWriters;
   Writers.Free;
   inherited Destroy;
 end;

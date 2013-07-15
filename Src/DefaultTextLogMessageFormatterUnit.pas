@@ -39,7 +39,7 @@ begin
   result := DupeString('0', Total);
   s := IntToStr(aNumber);
   mean := Length(s);
-  Move(s, result[1 + Total - mean], mean);
+  Move(s[1], result[1 + Total - mean], mean);
 end;
 
 function TDefaultTextLogMessageFormatter.Format(const aMessage: TLogMessage): string;
